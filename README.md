@@ -26,6 +26,8 @@ dvc init
 
 dvc add data_given\wine.csv
 
-Push to GIT
+Push to GIT:-
+git add .
+git commit  -m "First commit"
 
 
