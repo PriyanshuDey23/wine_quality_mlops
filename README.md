@@ -30,4 +30,9 @@ Push to GIT:-
 git add .
 git commit  -m "First commit"
 
+push to github
+git remote add origin https://github.com/PriyanshuDey23/wine_quality_mlops.git
+git branch -M main
+git push -u origin main
+
 
