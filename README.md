@@ -24,7 +24,7 @@ git init
 
 dvc init
 
-dvc add data_given\wine.csv
+dvc add data_given\WineQT.csv
 
 Push to GIT:-
 git add .
