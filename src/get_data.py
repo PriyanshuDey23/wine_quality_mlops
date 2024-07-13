@@ -18,7 +18,7 @@ def get_data(config_path):
     #print(config)
     data_path=config['data_source']['s3_source']  # Read the data path,from params.yaml
     df=pd.read_csv(data_path,sep=",",encoding='utf-8') # sep=separator
-    print(df)
+    return df
 
 if __name__=="__main__":   # Entrance point of the project
     args=argparse.ArgumentParser()
