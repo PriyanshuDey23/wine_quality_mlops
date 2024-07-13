@@ -20,7 +20,7 @@ pip install -r requirements.txt
 
 download the dataset 
 ```bash
-wine quality
+https://www.kaggle.com/datasets/yasserh/wine-quality-dataset
 ```
 
 ```bash
