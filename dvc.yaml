@@ -1,2 +1,10 @@
 # what are the stages we are going to have
-Stages:
+stages:
+  load_data:
+    cmd: python src\load_data.py --config=params.yaml
+    deps:  # dependencies
+    - src\get_data.py
+    - src\load_data.py
+    - data_given\WineQT.csv
+    outs:
+    - data\raw\WineQT.csv
