@@ -1,4 +1,5 @@
 # what are the stages we are going to have
+# It will run stage by stage like load_data, split_data 
 stages:
   load_data:
     cmd: python src\load_data.py --config=params.yaml
