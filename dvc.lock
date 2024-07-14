@@ -20,3 +20,23 @@ stages:
       hash: md5
       md5: c0cdac520775a91a8964a2b033dfd113
       size: 72970
+  split_data:
+    cmd: python src\split_data.py --config=params.yaml
+    deps:
+    - path: data\raw\WineQT.csv
+      hash: md5
+      md5: c0cdac520775a91a8964a2b033dfd113
+      size: 72970
+    - path: src\split_data.py
+      hash: md5
+      md5: 9b64c38cda3fbc4889b7f4589ed9357d
+      size: 1387
+    outs:
+    - path: data\processed\test_WineQT.csv
+      hash: md5
+      md5: 8c37414ca004d8daa935fa8eef1c86aa
+      size: 14805
+    - path: data\processed\train_WineQT.csv
+      hash: md5
+      md5: 06aef17aee3fab39e20ed46def58c7d1
+      size: 58315
