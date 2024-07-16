@@ -71,14 +71,14 @@ def train_and_evaluate(config_path):
     params_file = config["reports"]["params"]
 
     with open(scores_file, "w") as f: # Open the scores file
-        scores = {                      # Creating dictionary ro createa score
+        scores = {                      # Creating dictionary to store score
             "rmse": rmse,
             "mae": mae,
             "r2": r2
         }
         json.dump(scores, f, indent=4) # to store the data we need to dump,scores.files,indentation
 
-    with open(params_file, "w") as f:
+    with open(params_file, "w") as f:   # Creating dictionary to store params
         params = {
             "alpha": alpha,
             "l1_ratio": l1_ratio,
@@ -88,7 +88,7 @@ def train_and_evaluate(config_path):
     os.makedirs(model_dir, exist_ok=True)
     model_path = os.path.join(model_dir, "model.joblib")
 
-    joblib.dump(lr, model_path)
+    joblib.dump(lr, model_path) # model create
     
     
     
