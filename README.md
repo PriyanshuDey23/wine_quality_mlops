@@ -56,4 +56,28 @@ git commit  -m "First commit"
 git push -u origin main
 ```
 
+tox command - 
+```bash
+tox
+```
+
+for rebuilding -
+```bash
+tox -r
+```
+ pytest Command -
+ ```bash
+ pytest -v
+ ```
+
+ setup commands -
+ ```bash
+ pip install -e .
+ ```
+
+Build your own package commands- (If required)
+```bash
+python setup.py install sdist bdist wheel
+```
+
 
