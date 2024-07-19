@@ -80,4 +80,9 @@ Build your own package commands- (If required)
 python setup.py install sdist bdist wheel
 ```
 
+Testing API using postman  
+```bash
+https://www.postman.com/downloads/
+```
+
 

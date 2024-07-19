@@ -7,5 +7,7 @@ pandas
 scikit-learn
 pytest
 tox
-flake8 # Track all the changes( check the goodness of the code
+flake8 # Track all the changes( check the goodness of the code)
+Flask
+gunicorn
 
