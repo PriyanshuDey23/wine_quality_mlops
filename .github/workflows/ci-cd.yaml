@@ -16,13 +16,13 @@ jobs:
     runs-on: ubuntu-latest            # Running on latest version of ubuntu
 
     steps:
-    - uses: actions\checkout@v2
+    - uses: actions/checkout@v2
       with:
         fetch-depth: 0
     - name: Set up Python                  # Setting up the python
-      uses: actions\setup-python@v2
+      uses: actions/setup-python@v2
       with:
-        python-version: 
+        python-version: 3.12
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
