@@ -9,7 +9,8 @@ import os
 import joblib
 import json
 from prediction_service.prediction import form_response,api_response
-import prediction_service # For generating the exception
+import prediction_service
+import prediction_service.prediction # For generating the exception
 
 # we are going to specify the customized data
 
@@ -63,7 +64,7 @@ TARGET_range = {
     "max": 8.0
 }
 
-# We are going to do some test
+# We are going to do some test cases
 
 # Correct Range
 # Webapp
@@ -72,9 +73,25 @@ def test_form_response_correct_range(data=input_data["correct_range"]):   # The 
     assert TARGET_range["min"] <= res <= TARGET_range["max"]   # falls in the range
 
 # For API
-def test_api_form_response_correct_range(data=input_data["correct_range"]):   # The prediction we are getting is in the right range or not
+def test_api_response_correct_range(data=input_data["correct_range"]):   # The prediction we are getting is in the right range or not
     res=api_response(data)
     assert TARGET_range["min"] <= res["response"] <= TARGET_range["max"]   # falls in the range,res is inform of dictionary
 
 
 
+# InCorrect Range (Raise an error)
+# Webapp
+def test_form_response_incorrect_range(data=input_data["incorrect_range"]):
+    with pytest.raises(prediction_service.prediction.NotInRange): # error will be raised from the function called 
+        res=form_response(data)
+
+# API
+def test_api_response_incorrect_range(data=input_data["incorrect_range"]):
+    res = api_response(data)
+    assert res["response"] == prediction_service.prediction.NotInRange().message # We want to get the message
+
+# Incorrect Column 
+
+def test_api_response_incorrect_col(data=input_data["incorrect_col"]):
+    res = api_response(data)
+    assert res["response"] == prediction_service.prediction.NotInCols().message # We want to get the message
