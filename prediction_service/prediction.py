@@ -90,8 +90,8 @@ def api_response(dict_request):  # It is called in setup
         if validate_input(dict_request):
             data=np.array([list(dict_request.values())]) # Pass the data , convert to list and then array
             response = predict(data) # Getting the response in 2D List and getting the response
-            response={"response": response}# Since It is a json so we will Converted to dictionary and then it will pass as json response
-            return {response}
+            #response={"response": response}# Since It is a json so we will Converted to dictionary and then it will pass as json response
+            return response
         
     except NotInRange as e:
         response = {"the_exected_range": get_schema(), "response": str(e) }
