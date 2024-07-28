@@ -88,10 +88,10 @@ def form_response(dict_request):
 def api_response(dict_request):  # It is called in setup
     try:
         if validate_input(dict_request):
-            data=np.array([list(dict_request.values())]) # Pass the data , convert to list and then array
+            data=np.array([float(dict_request.values())]) # Pass the data , convert to list and then array
             response = predict(data) # Getting the response in 2D List and getting the response
             response={"response": response}# Since It is a json so we will Converted to dictionary and then it will pass as json response
-            return float(response)
+            return (response)
         
     except NotInRange as e:
         response = {"the_exected_range": get_schema(), "response": str(e) }
