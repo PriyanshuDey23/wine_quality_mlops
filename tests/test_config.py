@@ -75,7 +75,7 @@ def test_form_response_correct_range(data=input_data["correct_range"]):   # The 
 # For API
 def test_api_response_correct_range(data=input_data["correct_range"]):   # The prediction we are getting is in the right range or not
     res=api_response(data)
-    assert TARGET_range["min"] <= res["response"] <= TARGET_range["max"]   # falls in the range,res is inform of dictionary
+    assert TARGET_range["min"] <= res <= TARGET_range["max"]   # falls in the range,res is inform of dictionary
 
 
 
