@@ -70,12 +70,12 @@ TARGET_range = {
 # Webapp
 def test_form_response_correct_range(data=input_data["correct_range"]):   # The prediction we are getting is in the right range or not
     res=form_response(data)
-    assert int[TARGET_range["min"]] <= res <= int[TARGET_range["max"]]   # falls in the range
+    assert float[TARGET_range["min"]] <= res <= float[TARGET_range["max"]]   # falls in the range
 
 # For API
 def test_api_response_correct_range(data=input_data["correct_range"]):   # The prediction we are getting is in the right range or not
     res=api_response(data)
-    assert int[TARGET_range["min"]] <= res <= int[TARGET_range["max"]]   # falls in the range,res is inform of dictionary
+    assert float[TARGET_range["min"]] <= res <= float[TARGET_range["max"]]   # falls in the range,res is inform of dictionary
 
 
 
