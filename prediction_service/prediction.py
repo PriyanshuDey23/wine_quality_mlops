@@ -92,6 +92,14 @@ def api_response(dict_request):  # It is called in setup
             response = predict(data) # Getting the response in 2D List and getting the response
             response={"response": response}# Since It is a json so we will Converted to dictionary and then it will pass as json response
             return response
+        
+    except NotInRange as e:
+        response = {"the_exected_range": get_schema(), "response": str(e) }
+        return response
+
+    except NotInCols as e:
+        response = {"the_exected_cols": get_schema().keys(), "response": str(e) }
+        return response
     except Exception as e:
         response={"The Expected range":get_schema(),"response":str(e)} # Print the expected range, converted to string (e) 
         return response
